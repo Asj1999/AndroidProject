@@ -229,7 +229,11 @@ public class CameraActivity extends AppCompatActivity {
     }
 
     private boolean isCameraAvailable(Context context) {
-        return context.getPackageManager().hasSystemFeature(PackageManager.FEATURE_CAMERA_ANY);
+        if (context.getPackageManager().hasSystemFeature(PackageManager.FEATURE_CAMERA)){
+            return true;
+        } else {
+            return false;
+        }
     }
 
     public Activity getActivity() {
